@@ -1,0 +1,37 @@
+﻿body {
+    font-family: "Consolas", "Courier New", monospace;
+    /*background-color: #F3EBDD;
+    color: white*/
+}
+
+
+.bg-mi-color {
+    background-color: #2F496E;
+}
+
+.my-link {
+    margin-right: 60px;
+}
+.btn-custom {
+    /*background-color: #2F496E; /* Color de fondo personalizado */
+    border-color: #2F496E; /* Color del borde personalizado */
+    color: #2F496E; /* Color del texto personalizado */
+}
+
+.btn-dama {
+    /*background-color: #2F496E; /* Color de fondo personalizado */
+    border-color: #CF0000; /* Color del borde personalizado */
+    color: #CF0000; /* Color del texto personalizado */
+}
+
+.btn-custom:hover {
+    background-color: #2F496E; /* Color de fondo personalizado al pasar el mouse por encima */
+    border-color: #27ae60; /* Color del borde personalizado al pasar el mouse por encima */
+    color: white; /* Color del texto personalizado al pasar el mouse por encima */
+}
+
+.btn-dama:hover {
+    background-color: #CF0000; /* Color de fondo personalizado al pasar el mouse por encima */
+    border-color: #27ae60; /* Color del borde personalizado al pasar el mouse por encima */
+    color: white; /* Color del texto personalizado al pasar el mouse por encima */
+}

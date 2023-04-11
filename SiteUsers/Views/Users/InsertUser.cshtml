@@ -1,0 +1,34 @@
+﻿
+@{
+    ViewBag.Title = "InsertUser";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h2>Insert User</h2>
+            <form>
+                <div class="form-group">
+                    <label for="nombre">Name:</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre">
+                </div>
+                <div class="form-group">
+                    <label for="fecha-nacimiento">Date of Birth:</label>
+                    <input type="date" class="form-control" id="date-birth" name="dateBirth">
+                </div>
+                <div class="form-group mb-3">
+                    <label for="genero">Gender:</label>
+                    <select class="form-control" id="gender" name="genderU">
+                        <option value="">Select an option</option>
+                        <option value="M">Male</option>
+                        <option value="F">Female</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-outline-primary btn-custom">Register</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
