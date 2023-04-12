@@ -13,10 +13,10 @@ namespace SiteUsers.Controllers
         public ActionResult UserManagement()
         {
             // Generate a list of random users            
-            var users = new List<User>();
+            var users = new List<UserViewModel>();
             for (int i = 0; i < 10; i++)
             {
-                var user = new User
+                var user = new UserViewModel
                 {
                     Name = GetRandomName(),
                     DateOfBirth = GetRandomDate(),
