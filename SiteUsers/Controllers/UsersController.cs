@@ -12,8 +12,14 @@ namespace SiteUsers.Controllers
         // GET: Users
         public ActionResult UserManagement()
         {
-            // Generate a list of random users            
-            var users = new List<UserViewModel>();
+
+            using (UsersServiceReference.UsersServiceClient user = new UsersServiceReference.UsersServiceClient())
+            {
+                var userInDataBase = user.GetUsersAsync();
+            }
+
+                // Generate a list of random users            
+                var users = new List<UserViewModel>();
             for (int i = 0; i < 10; i++)
             {
                 var user = new UserViewModel
