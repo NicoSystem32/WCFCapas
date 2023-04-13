@@ -1,0 +1,42 @@
+﻿@using SiteUsers.Models
+
+@model UserViewModel
+
+@{
+    ViewBag.Title = "EditUser";
+}
+
+@section scripts {
+    @Scripts.Render("~/Scripts/users-management.js")
+}
+
+<h2>EditUser</h2>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h2>Edit User</h2>
+            <form id="user-form-update">
+                <input type="hidden" name="id" value="@Model.Id" />
+                <div class="form-group">
+                    <label for="nombre">Name:</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre" value="@Model.Name">
+                </div>
+                <div class="form-group">
+                    <label for="fecha-nacimiento">Date of Birth:</label>
+                    <input type="date" class="form-control" id="date-birth" name="dateBirth" value="@Model.DateOfBirth.ToString("yyyy-MM-dd")">
+                </div>
+                <div class="form-group mb-3">
+                    <label for="genero">Gender:</label>
+                    <select class="form-control" id="gender" name="genderU">
+                        <option value="">Select an option</option>
+                        <option value="M" @(Model.Gender == "M" ? "selected" : "")>Male</option>
+                        <option value="F" @(Model.Gender == "F" ? "selected" : "")>Female</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-outline-primary btn-custom">Save Changes</button>
+            </form>
+
+        </div>
+    </div>
+</div>

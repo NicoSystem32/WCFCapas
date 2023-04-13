@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SiteUsers.UsersServiceReference {
+namespace SiteUsers.UserServiceReference {
     using System.Runtime.Serialization;
     using System;
     
@@ -123,23 +123,41 @@ namespace SiteUsers.UsersServiceReference {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="UsersServiceReference.IUsersService")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="UserServiceReference.IUsersService")]
     public interface IUsersService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsersService/GetUsers", ReplyAction="http://tempuri.org/IUsersService/GetUsersResponse")]
-        SiteUsers.UsersServiceReference.UserBusinessModel[] GetUsers();
+        SiteUsers.UserServiceReference.UserBusinessModel[] GetUsers();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsersService/GetUsers", ReplyAction="http://tempuri.org/IUsersService/GetUsersResponse")]
-        System.Threading.Tasks.Task<SiteUsers.UsersServiceReference.UserBusinessModel[]> GetUsersAsync();
+        System.Threading.Tasks.Task<SiteUsers.UserServiceReference.UserBusinessModel[]> GetUsersAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsersService/InsertUser", ReplyAction="http://tempuri.org/IUsersService/InsertUserResponse")]
+        bool InsertUser(SiteUsers.UserServiceReference.UserBusinessModel userToInsert);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsersService/InsertUser", ReplyAction="http://tempuri.org/IUsersService/InsertUserResponse")]
+        System.Threading.Tasks.Task<bool> InsertUserAsync(SiteUsers.UserServiceReference.UserBusinessModel userToInsert);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsersService/EditUser", ReplyAction="http://tempuri.org/IUsersService/EditUserResponse")]
+        bool EditUser(SiteUsers.UserServiceReference.UserBusinessModel userToEdit);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsersService/EditUser", ReplyAction="http://tempuri.org/IUsersService/EditUserResponse")]
+        System.Threading.Tasks.Task<bool> EditUserAsync(SiteUsers.UserServiceReference.UserBusinessModel userToEdit);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsersService/DeleteUser", ReplyAction="http://tempuri.org/IUsersService/DeleteUserResponse")]
+        bool DeleteUser(int userToDelete);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsersService/DeleteUser", ReplyAction="http://tempuri.org/IUsersService/DeleteUserResponse")]
+        System.Threading.Tasks.Task<bool> DeleteUserAsync(int userToDelete);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IUsersServiceChannel : SiteUsers.UsersServiceReference.IUsersService, System.ServiceModel.IClientChannel {
+    public interface IUsersServiceChannel : SiteUsers.UserServiceReference.IUsersService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class UsersServiceClient : System.ServiceModel.ClientBase<SiteUsers.UsersServiceReference.IUsersService>, SiteUsers.UsersServiceReference.IUsersService {
+    public partial class UsersServiceClient : System.ServiceModel.ClientBase<SiteUsers.UserServiceReference.IUsersService>, SiteUsers.UserServiceReference.IUsersService {
         
         public UsersServiceClient() {
         }
@@ -160,12 +178,36 @@ namespace SiteUsers.UsersServiceReference {
                 base(binding, remoteAddress) {
         }
         
-        public SiteUsers.UsersServiceReference.UserBusinessModel[] GetUsers() {
+        public SiteUsers.UserServiceReference.UserBusinessModel[] GetUsers() {
             return base.Channel.GetUsers();
         }
         
-        public System.Threading.Tasks.Task<SiteUsers.UsersServiceReference.UserBusinessModel[]> GetUsersAsync() {
+        public System.Threading.Tasks.Task<SiteUsers.UserServiceReference.UserBusinessModel[]> GetUsersAsync() {
             return base.Channel.GetUsersAsync();
+        }
+        
+        public bool InsertUser(SiteUsers.UserServiceReference.UserBusinessModel userToInsert) {
+            return base.Channel.InsertUser(userToInsert);
+        }
+        
+        public System.Threading.Tasks.Task<bool> InsertUserAsync(SiteUsers.UserServiceReference.UserBusinessModel userToInsert) {
+            return base.Channel.InsertUserAsync(userToInsert);
+        }
+        
+        public bool EditUser(SiteUsers.UserServiceReference.UserBusinessModel userToEdit) {
+            return base.Channel.EditUser(userToEdit);
+        }
+        
+        public System.Threading.Tasks.Task<bool> EditUserAsync(SiteUsers.UserServiceReference.UserBusinessModel userToEdit) {
+            return base.Channel.EditUserAsync(userToEdit);
+        }
+        
+        public bool DeleteUser(int userToDelete) {
+            return base.Channel.DeleteUser(userToDelete);
+        }
+        
+        public System.Threading.Tasks.Task<bool> DeleteUserAsync(int userToDelete) {
+            return base.Channel.DeleteUserAsync(userToDelete);
         }
     }
 }

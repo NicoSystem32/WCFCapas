@@ -14,8 +14,41 @@ namespace WcfUsersBusiness
     [ServiceContract]
     public interface IUsersService
     {
+        /// <summary>
+        /// Obtiene la lista de usuarios.
+        /// </summary>
+        /// <returns>Una lista de objetos de negocio UserBusinessModel.</returns>
+        /// <remarks>Autor: Nicolás Flórez.</remarks>
         [OperationContract]
-        Task<List<UserBusinessModel>> GetUsersAsync();
+        List<UserBusinessModel> GetUsers();
+
+        /// <summary>
+        /// Inserta un usuario.
+        /// </summary>
+        /// <param name="userToInsert">El objeto de negocio UserBusinessModel a insertar.</param>
+        /// <returns>True si la operación fue exitosa, de lo contrario false.</returns>
+        /// <remarks>Autor: Nicolás Flórez.</remarks>
+        [OperationContract]
+        bool InsertUser(UserBusinessModel userToInsert);
+
+        /// <summary>
+        /// Edita un usuario.
+        /// </summary>
+        /// <param name="userToEdit">El objeto de negocio UserBusinessModel a editar.</param>
+        /// <returns>True si la operación fue exitosa, de lo contrario false.</returns>
+        /// <remarks>Autor: Nicolás Flórez.</remarks>
+        [OperationContract]
+        bool EditUser(UserBusinessModel userToEdit);
+
+        /// <summary>
+        /// Elimina un usuario.
+        /// </summary>
+        /// <param name="userToDelete">El identificador del usuario a eliminar.</param>
+        /// <returns>True si la operación fue exitosa, de lo contrario false.</returns>
+        /// <remarks>Autor: Nicolás Flórez.</remarks>
+        [OperationContract]
+        bool DeleteUser(int userToDelete);
+
     }
-    
+
 }

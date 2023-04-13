@@ -12,6 +12,8 @@ namespace DataAccess.Models
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class WCFUsersEntities : DbContext
     {
@@ -26,5 +28,30 @@ namespace DataAccess.Models
         }
     
         public virtual DbSet<Users> Users { get; set; }
+    
+        public virtual ObjectResult<SP_USERS_CRUD_Result> SP_USERS_CRUD(Nullable<int> id, string name, Nullable<System.DateTime> dateOfBirth, string gender, string action, ObjectParameter rowsAffected)
+        {
+            var idParameter = id.HasValue ?
+                new ObjectParameter("Id", id) :
+                new ObjectParameter("Id", typeof(int));
+    
+            var nameParameter = name != null ?
+                new ObjectParameter("Name", name) :
+                new ObjectParameter("Name", typeof(string));
+    
+            var dateOfBirthParameter = dateOfBirth.HasValue ?
+                new ObjectParameter("DateOfBirth", dateOfBirth) :
+                new ObjectParameter("DateOfBirth", typeof(System.DateTime));
+    
+            var genderParameter = gender != null ?
+                new ObjectParameter("Gender", gender) :
+                new ObjectParameter("Gender", typeof(string));
+    
+            var actionParameter = action != null ?
+                new ObjectParameter("Action", action) :
+                new ObjectParameter("Action", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_USERS_CRUD_Result>("SP_USERS_CRUD", idParameter, nameParameter, dateOfBirthParameter, genderParameter, actionParameter, rowsAffected);
+        }
     }
 }

@@ -8,6 +8,6 @@ namespace WcfUsersBusiness.ModelsContract
     public class RespuestaService
     {
         public string MessageResponse { get; set; }
-        public string Error { get; set; }
+        public bool isCorrect { get; set; }
     }
 }

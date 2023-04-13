@@ -9,7 +9,7 @@ namespace WcfUsersBusiness.ModelsContract
     [DataContract]
     public class UserBusinessModel
     {
-        [DataMember]
+        [DataMember(IsRequired = false)]
         public int UserId { get; set; }
         [DataMember]
         public string Name { get; set; }

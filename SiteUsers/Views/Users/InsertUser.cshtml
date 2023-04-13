@@ -3,11 +3,17 @@
     ViewBag.Title = "InsertUser";
 }
 
+@section scripts {
+    
+    @Scripts.Render("~/Scripts/users-management.js")
+}
+
+
 <div class="container">
     <div class="row">
         <div class="col-md-6 offset-md-3">
             <h2>Insert User</h2>
-            <form>
+            <form id="user-form">
                 <div class="form-group">
                     <label for="nombre">Name:</label>
                     <input type="text" class="form-control" id="nombre" name="nombre">
@@ -29,6 +35,7 @@
         </div>
     </div>
 </div>
+
 
 
 
